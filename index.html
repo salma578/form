@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form</title>
+  <!----  <link rel="stylesheet" href="style.css">  -->
+</head>
+<header>
+    <img src="https://mictech.edu.in/images/logo-small.png" alt="mic logo.jpg" style="width: 150px"; height:"150px";>
+ <h1>--Coding Registeration Form--</h1>
+</header>
+<body>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+header{
+    text-align: center;
+    color: rgba(249, 250, 244, 0.95);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+body {
+    background-image: url("mic image.jpeg");
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.container {
+    width: 360px;
+    height: 480px;
+    margin: 8% auto;
+    background: #e6ede8;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden; 
+}
+
+h2,h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #777777;
+}
+
+.container form {
+    width: 280px;
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    transition: 0.5s;
+}
+
+form input {
+    width: 100%;
+    padding: 10px 5px; 
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #451d61;
+    outline: none;
+    background: transparent;
+}
+
+::placeholder {
+    color: #777777;
+}
+
+.btn-box {
+    width: 100%;
+    margin: 20px auto; 
+    text-align: center;
+}
+
+form button {
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #db4da9, #5291da);
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#Form2 {
+    left: 450px;
+}
+
+#Form3 {
+    left: 450px;
+    padding: 1px;
+}
+
+.step-row {
+    width: 360px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000; 
+    position: relative;
+}
+
+.step-col {
+    width: 120px;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+#progress {
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(to right, #db4db0, #5272da);
+    transition: 1s;
+}
+fieldset {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adjusts spacing between elements */
+    flex-wrap: wrap; /* Prevents overflow on small screens */
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between radio button and text */
+    cursor: pointer;
+    font-size: 14px; /* Adjust text size */
+}
+
+fieldset input[type="radio"] {
+    accent-color: #6810ff; /* Custom color for radio buttons */
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+#address {
+    width: 200px; 
+    height: 20px; /* Fixed height */
+    resize: none; /* Disable resizing */
+}
+    </style>
+    <div class="container">
+        <!-- Form 1 -->
+        <form id="Form1"> 
+            <h3>CREATE ACCOUNT</h3>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="USER ID / REG NO" required>
+            <input type="text" placeholder="College Code" required>
+
+            <div class="btn-box">
+                <button type="button" id="next1">Next</button>
+            </div>
+        </form>
+
+        <!-- Form 2 -->
+        <form id="Form2">
+            <h3>PERSONAL INFO</h3>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="number" placeholder="Phone Number" required>
+
+            <div class="btn-box">
+                <button type="button" id="back1">Back</button>
+                <button type="button" id="next2">Next</button>
+            </div>
+        </form>
+
+        <!-- Form 3 -->
+        <form id="Form3">
+            <h2>Additional Information</h2>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+           <fieldset>
+    <h4>Gender:</h4>
+    <label for="male">
+        <input type="radio" id="male" name="gender" value="male"> Male
+    </label>
+    <label for="female">
+        <input type="radio" id="female" name="gender" value="female"> Female
+    </label>
+</fieldset>     
+  <label for="college">College:</label>
+            <input type="text "id="college" name="address" rows="3" cols="20" placeholder="Enter your address" required></textarea>
+            <label for="Branch">Branch:</label>
+            <select id="Branch" name="Branch" required>
+                <option value="" disabled selected>Select your Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                 <option value="AI-ML">AI-ML</option>
+                  <option value="AI-DS">AI-DS</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="CE">CE</option>
+            </select>
+
+            <div class="btn-box">
+                <button type="button" id="back2">Back</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    <!-- Progress bar -->
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>Step1</small></div>
+        <div class="step-col"><small>Step2</small></div>
+        <div class="step-col"><small>Step3</small></div>
+    </div>
+    </div>
+    <script>
+var Form1 = document.getElementById("Form1");
+var Form2 = document.getElementById("Form2");
+var Form3 = document.getElementById("Form3");
+
+var next1 = document.getElementById("next1");
+var next2 = document.getElementById("next2");
+var back1 = document.getElementById("back1");
+var back2 = document.getElementById("back2");
+
+var progress = document.getElementById("progress");
+
+// Form 1 to Form 2
+next1.onclick = function() {
+    Form1.style.left = "-450px"; 
+    Form2.style.left = "40px";   
+    progress.style.width = "240px";
+}
+
+// Back from Form 2 to Form 1
+back1.onclick = function() {
+    Form1.style.left = "40px";  
+    Form2.style.left = "450px"; 
+    progress.style.width = "120px"; 
+}
+
+// Form 2 to Form 3
+next2.onclick = function() {
+    Form2.style.left = "-450px"; 
+    Form3.style.left = "40px"; 
+    progress.style.width = "360px";
+}
+
+// Back from Form 3 to Form 2
+back2.onclick = function() {
+    Form2.style.left = "40px";  
+    Form3.style.left = "450px"; 
+    progress.style.width = "240px";
+}
+
+    </script>    
+</body>
+</html>
